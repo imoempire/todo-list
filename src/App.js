@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './App.css';
 
 export default class App extends Component {
   constructor(props){
@@ -48,17 +49,17 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1>Add Item...</h1><br />
-        <input type="text" value={this.state.newItem} 
+        <input style={{height: '2ovh', width: '100px,'}} type="text" value={this.state.newItem} 
         onChange={e => this.updateInput("newItem", e.target.value)} />
         <button onClick={() => this.addItem()}>Add</button>
         <br />
-        <ul>
+        <ul className='list'>
             {this.state.list.map(item => {
               return (
                 <li key={item.id}>
                   {item.value}
                   <button onClick={() => this.deleteItem(item.id)}>
-                    <big>x</big>
+                    <big>check</big>
                   </button>
                 </li>
               );
